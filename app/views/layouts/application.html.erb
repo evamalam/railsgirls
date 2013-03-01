@@ -2,13 +2,33 @@
 <html>
 <head>
   <title>Railgirls</title>
+  <link rel="stylesheet" href="http://railgirls.com/assets/bootstrap.css"
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">The Idea app</a>
+      <ul class="nav">
+        <li class="active"><a href="/ideas">Ideas</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+	<% (1..10).each do |number| %>
+		<%= number %>
+	<% end %>
+	<%= yield %>
+</div>
 
-<%= yield %>
-
+<footer>
+  <div class="container">
+    Rails Girls 2013
+  </div>
+</footer>
 </body>
 </html>
